@@ -1,6 +1,6 @@
 package dsa.binarysearch;
 
-public class FindElementInRotatedArray {
+public class PivotBasedProblems {
 
 	// Find pivot - This is the max element in array
 	// Do BS from 0 to pivot and pivot+1 to end ( as both the sides will b in
@@ -27,6 +27,16 @@ public class FindElementInRotatedArray {
 		}
 
 		return -1;
+	}
+	
+	private static int smallestElementinRotatedArray(int[]nums) {
+		
+		return nums[findPivot(nums)+1];
+	}
+	
+	private static int noOftimesArrayRotated(int[] nums) {
+		
+		return findPivot(nums)+1;
 	}
 
 	private static int binarySearch(int[] nums,int start, int end, int target) {
@@ -62,6 +72,9 @@ public class FindElementInRotatedArray {
 		}else {
 			System.out.println(binarySearch(nums,pivot+1,nums.length-1,target));
 		}
+		
+		System.out.println(smallestElementinRotatedArray(nums));
+		System.out.println(noOftimesArrayRotated(nums));
 		
 	}
 }
